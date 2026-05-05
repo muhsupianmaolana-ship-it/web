@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chumel17 — WiFi Voucher Portal</title>
+  <link rel="stylesheet" href="web.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Animasi Teknologi -->
+  <div class="bg-blobs">
+    <div class="tech-element robot-1"></div><div class="tech-element robot-2"></div><div class="tech-element robot-3"></div>
+    <div class="tech-element wifi-1"></div><div class="tech-element wifi-2"></div><div class="tech-element wifi-3"></div>
+    <div class="tech-element chip-1"></div><div class="tech-element chip-2"></div>
+    <div class="tech-element circuit-1"></div><div class="tech-element circuit-2"></div>
+    <div class="tech-element gear-1"></div><div class="tech-element gear-2"></div>
+    <div class="tech-element cloud-1"></div><div class="tech-element db-1"></div>
+    <div class="tech-element signal-1"></div><div class="tech-element rocket-1"></div>
+    <div class="tech-element lightning-1"></div><div class="tech-element network-1"></div>
+    <div class="glow-orb orb-1"></div><div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div><div class="glow-orb orb-4"></div>
+  </div>
+
+  <main class="container">
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M1.5 8.5C5 5 9.3 3 12 3s7 2 10.5 5.5"/><path d="M5 12c1.8-1.8 4.3-3 7-3s5.2 1.2 7 3"/>
+            <path d="M8.5 15.5c.9-.9 2.2-1.5 3.5-1.5s2.6.6 3.5 1.5"/><circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="logo-text"><span class="logo-name">chumel<span class="logo-accent">17</span></span><span class="logo-tagline">Hotspot Portal</span></div>
+      </div>
+      <div class="status-pill"><span class="status-dot"></span>Server Online</div>
+    </header>
+
+    #layanan pilih paket
+    
+    <div class="layout">
+      <section class="pricing-section">
+        <div class="section-header"><h2 class="section-title">Pilih Paket</h2><p class="section-desc">Pilih durasi sesuai kebutuhanmu</p></div>
+        <div class="pricing-grid">
+          <div class="price-card" data-label="3 Jam" data-price="2.000" data-icon="⚡" onclick="selectPlan(this)">
+            <div class="card-glow"></div><div class="card-top"><span class="card-badge">Cepat</span><span class="card-icon">⚡</span></div>
+            <div class="card-duration">3 Jam</div><div class="card-speed">Up to 10 Mbps</div>
+            <div class="card-price"><span class="currency">Rp</span><span class="amount">2.000</span></div>
+            <ul class="card-features"><li>Akses semua situs</li><li>1 perangkat</li><li>Tanpa batas data</li></ul>
+            <div class="card-select-btn">Pilih Paket</div>
+          </div>
+
+          <div class="price-card popular" data-label="5 Jam" data-price="3.000" data-icon="🔥" onclick="selectPlan(this)">
+            <div class="card-glow"></div><div class="popular-ribbon">Populer</div>
+            <div class="card-top"><span class="card-badge">Favorit</span><span class="card-icon">🔥</span></div>
+            <div class="card-duration">5 Jam</div><div class="card-speed">Up to 20 Mbps</div>
+            <div class="card-price"><span class="currency">Rp</span><span class="amount">3.000</span></div>
+            <ul class="card-features"><li>Akses semua situs</li><li>2 perangkat</li><li>Tanpa batas data</li></ul>
+            <div class="card-select-btn">Pilih Paket</div>
+          </div>
+
+          <div class="price-card" data-label="24 Jam" data-price="5.000" data-icon="💎" onclick="selectPlan(this)">
+            <div class="card-glow"></div><div class="card-top"><span class="card-badge">Hemat</span><span class="card-icon">💎</span></div>
+            <div class="card-duration">24 Jam</div><div class="card-speed">Up to 25 Mbps</div>
+            <div class="card-price"><span class="currency">Rp</span><span class="amount">5.000</span></div>
+            <ul class="card-features"><li>Akses semua situs</li><li>3 perangkat</li><li>Tanpa batas data</li></ul>
+            <div class="card-select-btn">Pilih Paket</div>
+          </div>
+
+          <div class="price-card" data-label="1 Minggu" data-price="20.000" data-icon="🌙" onclick="selectPlan(this)">
+            <div class="card-glow"></div><div class="card-top"><span class="card-badge">Seharian</span><span class="card-icon">🌙</span></div>
+            <div class="card-duration">1 Minggu</div><div class="card-speed">Up to 30 Mbps</div>
+            <div class="card-price"><span class="currency">Rp</span><span class="amount">20.000</span></div>
+            <ul class="card-features"><li>Akses semua situs</li><li>5 perangkat</li><li>Tanpa batas data</li></ul>
+            <div class="card-select-btn">Pilih Paket</div>
+          </div>
+
+          <div class="price-card" data-label="1 Bulan" data-price="45.000" data-icon="🚀" onclick="selectPlan(this)">
+            <div class="card-glow"></div><div class="card-top"><span class="card-badge">Best Value</span><span class="card-icon">🚀</span></div>
+            <div class="card-duration">1 Bulan</div><div class="card-speed">Up to 50 Mbps</div>
+            <div class="card-price"><span class="currency">Rp</span><span class="amount">45.000</span></div>
+            <ul class="card-features"><li>Akses semua situs</li><li>Unlimited perangkat</li><li>Tanpa batas data</li></ul>
+            <div class="card-select-btn">Pilih Paket</div>
+          </div>
+
+          <div class="price-card" data-label="3 Bulan" data-price="100.000" data-icon="👑" onclick="selectPlan(this)">
+            <div class="card-glow"></div><div class="card-top"><span class="card-badge">Ultimate</span><span class="card-icon">👑</span></div>
+            <div class="card-duration">3 Bulan</div><div class="card-speed">Up to 100 Mbps</div>
+            <div class="card-price"><span class="currency">Rp</span><span class="amount">100.000</span></div>
+            <ul class="card-features"><li>Akses semua situs</li><li>Unlimited perangkat</li><li>Tanpa batas data</li></ul>
+            <div class="card-select-btn">Pilih Paket</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="voucher-section">
+        <div class="voucher-card">
+          
+          <!-- Header Voucher -->
+          <div class="voucher-header" id="voucherHeader">
+            <div class="voucher-wifi-anim"><div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div><div class="wifi-dot"></div></div>
+            <h2 class="voucher-title">Pembelian Voucher</h2>
+            <p class="voucher-desc">Pilih paket & bayar untuk mendapatkan kode</p>
+          </div>
+
+          <!-- Ringkasan Paket -->
+          <div class="plan-summary" id="planSummary">
+            <div class="plan-icon" id="planIcon">📡</div>
+            <div class="plan-info"><span class="plan-label">Paket dipilih</span><span class="plan-name" id="planName">Belum dipilih</span></div>
+            <div class="plan-price" id="planPrice">—</div>
+          </div>
+
+          <!-- 🔽 PAYMENT SECTION (MUNCUL LANGSUNG SETELAH PILIH PAKET) 🔽 -->
+          <div class="payment-section" id="paymentSection" style="display: none;">
+            <h3 class="voucher-title" style="margin-bottom: 12px;">Pilih Metode Pembayaran</h3>
+            <div class="payment-grid">
+              <div class="payment-option" data-method="QRIS" onclick="selectPayment(this)"><div class="pay-icon">📱</div><span>QRIS</span></div>
+              <div class="payment-option" data-method="DANA" onclick="selectPayment(this)"><div class="pay-icon">💳</div><span>DANA</span></div>
+              <div class="payment-option" data-method="OVO" onclick="selectPayment(this)"><div class="pay-icon">💜</div><span>OVO</span></div>
+              <div class="payment-option" data-method="GoPay" onclick="selectPayment(this)"><div class="pay-icon">💚</div><span>GoPay</span></div>
+            </div>
+            <button class="connect-btn" id="payBtn" onclick="processPayment()" disabled><span class="btn-text">Bayar Sekarang</span></button>
+            <p style="font-size:11px;color:var(--text-muted);margin-top:10px">🔒 Pembayaran aman & terenkripsi</p>
+          </div>
+
+          <!-- Success Screen (Muncul setelah bayar) -->
+          <div class="success-screen" id="successScreen">
+            <div class="success-anim"><div class="success-ring"></div><div class="success-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12l5 5L20 7"/></svg></div></div>
+            <h3 class="success-title">✅ Pembayaran Berhasil!</h3>
+            <p class="success-sub">Voucher kamu telah dibuat. Gunakan kode ini untuk login WiFi.<br><strong class="voucher-code-box" id="generatedCode">XXXX-XXXX-XXXX</strong></p>
+            <button class="reconnect-btn" onclick="copyCode()">📋 Salin Kode</button>
+            <div class="success-details" id="successDetails"></div>
+            <button class="reconnect-btn" style="margin-top:8px;background:transparent;border-color:var(--primary)" onclick="resetAll()">Beli Voucher Lain</button>
+          </div>
+
+          <div class="voucher-footer"><span>Butuh bantuan?</span><a href="#">Hubungi Admin chumel17</a></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer"><span>© 2025 <strong>chumel17</strong> Hotspot — All rights reserved</span></footer>
+  </main>
+
+  <!-- ✅ JAVASCRIPT LENGKAP ✅ -->
+  <script>
+    let selectedPayment = null;
+
+    function selectPlan(card) {
+      // Highlight card yang dipilih
+      document.querySelectorAll('.price-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      
+      // Update ringkasan paket
+      document.getElementById('planIcon').textContent = card.dataset.icon;
+      document.getElementById('planName').textContent = card.dataset.label;
+      document.getElementById('planPrice').textContent = 'Rp ' + card.dataset.price;
+      document.getElementById('planSummary').classList.add('active');
+      
+      // 🔥 LANGSUNG TAMPILKAN PAYMENT SECTION 🔥
+      document.getElementById('paymentSection').style.display = 'block';
+      document.getElementById('successScreen').classList.remove('visible');
+      
+      // Reset state payment
+      selectedPayment = null;
+      document.getElementById('payBtn').disabled = true;
+      document.querySelectorAll('.payment-option').forEach(p => p.classList.remove('active'));
+    }
+
+    function selectPayment(el) {
+      document.querySelectorAll('.payment-option').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      selectedPayment = el.dataset.method;
+      document.getElementById('payBtn').disabled = false;
+    }
+
+    function processPayment() {
+      const btn = document.getElementById('payBtn');
+      btn.classList.add('loading');
+      btn.querySelector('.btn-text').textContent = 'Memproses...';
+      
+      // Simulasi proses pembayaran (2 detik)
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        btn.querySelector('.btn-text').textContent = 'Bayar Sekarang';
+        showSuccessScreen(generateVoucherCode());
+      }, 2000);
+    }
+
+    function generateVoucherCode() {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let code = '';
+      for (let i = 0; i < 12; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+        if ((i + 1) % 4 === 0 && i < 11) code += '-';
+      }
+      return code;
+    }
+
+    function showSuccessScreen(code) {
+      // Sembunyikan payment, tampilkan success
+      document.getElementById('paymentSection').style.display = 'none';
+      document.getElementById('successScreen').classList.add('visible');
+      
+      // Update konten success
+      document.getElementById('generatedCode').textContent = code;
+      document.getElementById('successDetails').innerHTML = 
+        `<div class="detail-row"><span>Paket</span><strong>${document.getElementById('planName').textContent}</strong></div>
+         <div class="detail-row"><span>Metode</span><strong>${selectedPayment}</strong></div>
+         <div class="detail-row"><span>Harga</span><strong>${document.getElementById('planPrice').textContent}</strong></div>`;
+    }
+
+    function copyCode() {
+      const code = document.getElementById('generatedCode').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Tersalin!';
+        setTimeout(() => btn.textContent = '📋 Salin Kode', 2000);
+      }).catch(() => {
+        // Fallback untuk browser lama
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        alert('Kode disalin: ' + code);
+      });
+    }
+
+    function resetAll() {
+      document.getElementById('paymentSection').style.display = 'none';
+      document.getElementById('successScreen').classList.remove('visible');
+      document.getElementById('planSummary').classList.remove('active');
+      document.querySelectorAll('.price-card').forEach(c => c.classList.remove('active'));
+      document.getElementById('planName').textContent = 'Belum dipilih';
+      document.getElementById('planPrice').textContent = '—';
+    }
+
+    // Animasi delay untuk card
+    document.querySelectorAll('.price-card').forEach((c, i) => {
+      c.style.animationDelay = (i * 0.07) + 's';
+    });
+  </script>
+</body>
+</html>

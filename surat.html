@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Surat Cinta Untukmu</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #e785cf, #d6a7dc);
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 400px;
+        height: 200px;
+        background: linear-gradient(135deg, #ede3ea, #cf4460);
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        cursor: pointer;
+        transition: 0.5s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card.open {
+        height: 400px;
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #f31252, #dfd8da);
+    }
+
+    .title {
+        font-size: 20px;
+        margin: 0;
+        color: #f8ccd7;
+        opacity: 0;
+        transition: 0.5s;
+        display: none;
+        order: 2;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .card.open .title {
+        opacity: 1;
+        display: block;
+    }
+
+    .content {
+        opacity: 0;
+        padding: 20px 15px;
+        transition: 0.5s;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-y: auto;
+        max-height: 350px;
+        order: 4;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .card.open .content {
+        opacity: 1;
+    }
+
+    .open-btn {
+        background: linear-gradient(to right, #520003, #a90239);
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
+        order: 3;
+    }
+
+    .open-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(255, 154, 158, 0.6);
+    }
+
+    .card.open .open-btn {
+        display: none;
+    }
+
+    .heart-icon {
+        font-size: 60px;
+        opacity: 0;
+        transition: 0.5s;
+        margin-bottom: 10px;
+        order: 1;
+    }
+
+    .card.open .heart-icon {
+        opacity: 1;
+    }
+
+    /* Love animation */
+    .heart {
+        position: absolute;
+        bottom: 0;
+        font-size: 20px;
+        color: red;
+        animation: float 4s infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-300px) scale(1.5); opacity: 0; }
+    }
+
+    .floating-image {
+        position: fixed;
+        font-size: 50px;
+        opacity: 0.7;
+        pointer-events: none;
+        animation: floatImage 6s infinite ease-in-out;
+    }
+
+    @keyframes floatImage {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-30px) rotate(10deg); }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="card">
+    <button class="open-btn" onclick="openCard()">Buka Surat</button>
+    <div class="heart-icon">💖</div>
+    <div class="title">from bojes </div>
+    <div class="title"> to riskya 💖</div>
+    <div class="content">
+        <p>Aku tidak pernah benar-benar mencari seseorang untuk melengkapi hidupku, sampai akhirnya aku bertemu denganmu.</p>
+        
+        <p>Bersamamu, semuanya terasa lebih sederhana. Hal-hal kecil yang dulu biasa saja, sekarang jadi punya arti. Percakapan ringan, diam yang nyaman, bahkan hal-hal sepele—semuanya terasa cukup.</p>
+        
+        <p>Aku suka caramu melihat dunia, cara kamu berpikir, dan bagaimana kamu tetap menjadi dirimu sendiri tanpa harus menjadi orang lain. Itu yang membuatku ingin tetap di sini, lebih lama.</p>
+        
+        <p>Aku tidak menjanjikan sesuatu yang terdengar sempurna. Tapi aku ingin berjalan bersamamu, pelan-pelan, saling memahami, dan tetap memilih satu sama lain, bahkan di hari-hari yang tidak mudah.</p>
+        
+        <p>Kalau suatu hari kamu merasa ragu, ingat saja: di antara banyak kemungkinan dalam hidupku, aku memilih kamu—dan pilihan itu tidak pernah terasa salah.</p>
+        
+        <p><b>I Love You ❤️</b></p>
+    </div>
+</div>
+
+<script>
+function openCard() {
+    const card = document.querySelector('.card');
+    card.classList.toggle('open');
+    
+    // Hide/show floating images
+    const floatingImages = document.querySelectorAll('.floating-image');
+    floatingImages.forEach(img => {
+        img.style.display = card.classList.contains('open') ? 'none' : 'block';
+    });
+
+    // Generate hearts
+    for (let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+}
+
+// Create floating romantic images on page load
+window.addEventListener('load', function() {
+    const romanticEmojis = ['🌹', '💐', '💕', '💖', '✨', '🎀'];
+    
+    for (let i = 0; i < 8; i++) {
+        let img = document.createElement('div');
+        img.className = 'floating-image';
+        img.innerHTML = romanticEmojis[Math.floor(Math.random() * romanticEmojis.length)];
+        
+        let randomX = Math.random() * 100;
+        let randomDelay = Math.random() * 2;
+        let randomDuration = 5 + Math.random() * 4;
+        
+        img.style.left = randomX + '%';
+        img.style.top = Math.random() * 80 + '%';
+        img.style.animationDelay = randomDelay + 's';
+        img.style.animationDuration = randomDuration + 's';
+        
+        document.body.appendChild(img);
+    }
+});
+</script>
+
+</body>
+</html>
