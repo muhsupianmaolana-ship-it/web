@@ -1,88 +1,31 @@
-/*
-================================================================================
-                    CHUMEL17 — WiFi Voucher Portal Stylesheet
-                    Versi Lengkap dengan Navigasi Bagian
-================================================================================
-
-DAFTAR ISI:
-1.  #IMPORT-FONTS
-2.  #VARIABLES-WARNA
-3.  #RESET-BASIC
-4.  #BACKGROUND-ANIMASI
-5.  #TECH-ELEMENTS-ROBOT
-6.  #TECH-ELEMENTS-WIFI
-7.  #TECH-ELEMENTS-CHIP
-8.  #TECH-ELEMENTS-CIRCUIT
-9.  #TECH-ELEMENTS-GEAR
-10. #TECH-ELEMENTS-LAINNYA
-11. #GLOW-ORBS
-12. #ANIMASI-KEYFRAMES
-13. #LAYOUT-CONTAINER
-14. #HEADER-LOGO
-15. #STATUS-PILL
-16. #SECTION-PRICING
-17. #PRICING-GRID
-18. #PRICE-CARD
-19. #PRICE-CARD-POPULAR
-20. #CARD-CONTENT
-21. #VOUCHER-SECTION
-22. #VOUCHER-HEADER
-23. #PLAN-SUMMARY
-24. #PAYMENT-SECTION
-25. #PAYMENT-GRID
-26. #INPUT-VOUCHER
-27. #CODE-DISPLAY
-28. #BUTTONS
-29. #SUCCESS-SCREEN
-30. #FOOTER
-31. #RESPONSIVE
-
-================================================================================
-*/
-
-
-/* ============================================
-   1. #IMPORT-FONTS
-   ============================================ */
+/* ==========================================
+   IMPORT FONTS
+   ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
 
-
-/* ============================================
-   2. #VARIABLES-WARNA
-   ============================================ */
+/* ==========================================
+   VARIABLES
+   ========================================== */
 :root {
-  /* Warna Utama - Cyan */
   --primary: #00D9FF;
   --primary-dark: #00B8D4;
   --primary-light: #E0F9FF;
-  
-  /* Warna Accent - Pink/Magenta */
   --accent: #FF00E5;
   --accent-dark: #D400BF;
   --accent-secondary: #7C3AED;
-  
-  /* Warna Status */
   --danger: #FF5C6E;
   --danger-bg: #FFF0F2;
   --success: #00FFA3;
   --success-bg: #E0FFF5;
-  
-  /* Warna Text */
   --text-primary: #0A0E27;
   --text-secondary: #4A5568;
   --text-muted: #718096;
-  
-  /* Background & Card */
   --bg: #050814;
   --card-bg: rgba(15, 23, 42, 0.85);
   --border: rgba(0, 217, 255, 0.25);
-  
-  /* Shadow */
   --shadow-sm: 0 2px 8px rgba(0, 217, 255, 0.12);
   --shadow-md: 0 8px 32px rgba(0, 217, 255, 0.2);
   --shadow-lg: 0 20px 60px rgba(0, 217, 255, 0.3);
-  
-  /* Radius & Font */
   --radius: 16px;
   --radius-sm: 10px;
   --radius-xs: 6px;
@@ -90,10 +33,9 @@ DAFTAR ISI:
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-
-/* ============================================
-   3. #RESET-BASIC
-   ============================================ */
+/* ==========================================
+   RESET BASIC
+   ========================================== */
 *, *::before, *::after { 
   box-sizing: border-box; 
   margin: 0; 
@@ -112,10 +54,9 @@ body {
   overflow-x: hidden; 
 }
 
-
-/* ============================================
-   4. #BACKGROUND-ANIMASI
-   ============================================ */
+/* ==========================================
+   BACKGROUND ANIMASI (ASLI - JANGAN DIUBAH)
+   ========================================== */
 .bg-blobs { 
   position: fixed; 
   inset: 0; 
@@ -125,7 +66,6 @@ body {
   background: linear-gradient(135deg, #050814 0%, #0a0e27 50%, #1a0f2e 100%); 
 }
 
-/* Grid Pattern Background */
 .bg-blobs::before { 
   content: ''; 
   position: absolute; 
@@ -137,10 +77,11 @@ body {
   animation: gridMove 25s linear infinite; 
 }
 
+@keyframes gridMove { 
+  0% { transform: perspective(500px) rotateX(60deg) translateY(0); } 
+  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); } 
+}
 
-/* ============================================
-   5. #TECH-ELEMENTS-ROBOT
-   ============================================ */
 .tech-element { 
   position: absolute; 
   animation: floatTech 14s ease-in-out infinite; 
@@ -148,6 +89,7 @@ body {
   z-index: 1; 
 }
 
+/* Robot Elements */
 .robot-1 { 
   width: 90px; height: 90px; 
   top: 8%; left: 3%; 
@@ -175,10 +117,7 @@ body {
   animation-delay: 8s; 
 }
 
-
-/* ============================================
-   6. #TECH-ELEMENTS-WIFI
-   ============================================ */
+/* WiFi Elements */
 .wifi-1 { 
   width: 80px; height: 80px; 
   top: 15%; right: 15%; 
@@ -206,10 +145,7 @@ body {
   animation-delay: 10s; 
 }
 
-
-/* ============================================
-   7. #TECH-ELEMENTS-CHIP
-   ============================================ */
+/* Chip Elements */
 .chip-1 { 
   width: 70px; height: 70px; 
   top: 35%; left: 15%; 
@@ -228,10 +164,7 @@ body {
   animation-delay: 7s; 
 }
 
-
-/* ============================================
-   8. #TECH-ELEMENTS-CIRCUIT
-   ============================================ */
+/* Circuit Elements */
 .circuit-1 { 
   width: 95px; height: 95px; 
   top: 25%; left: 45%; 
@@ -250,17 +183,14 @@ body {
   animation-delay: 9s; 
 }
 
-
-/* ============================================
-   9. #TECH-ELEMENTS-GEAR
-   ============================================ */
+/* Gear Elements */
 .gear-1 { 
   width: 65px; height: 65px; 
   top: 50%; left: 5%; 
   color: #00D9FF; 
   opacity: 0.7; 
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300D9FF' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E") no-repeat center; 
-  animation-delay: 1s; 
+  animation-delay: 1s;
   animation-name: floatTech, rotateSlow; 
 }
 
@@ -270,14 +200,11 @@ body {
   color: #00FFA3; 
   opacity: 0.65; 
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300FFA3' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E") no-repeat center; 
-  animation-delay: 6s; 
+  animation-delay: 6s;
   animation-name: floatTech, rotateSlow; 
 }
 
-
-/* ============================================
-   10. #TECH-ELEMENTS-LAINNYA
-   ============================================ */
+/* Other Tech Elements */
 .cloud-1 { 
   width: 85px; height: 85px; 
   top: 42%; right: 8%; 
@@ -332,10 +259,7 @@ body {
   animation-delay: 7s; 
 }
 
-
-/* ============================================
-   11. #GLOW-ORBS
-   ============================================ */
+/* Glow Orbs */
 .glow-orb { 
   position: absolute; 
   border-radius: 50%; 
@@ -373,15 +297,6 @@ body {
   animation-delay: 6s; 
 }
 
-
-/* ============================================
-   12. #ANIMASI-KEYFRAMES
-   ============================================ */
-@keyframes gridMove { 
-  0% { transform: perspective(500px) rotateX(60deg) translateY(0); } 
-  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); } 
-}
-
 @keyframes floatTech {
   0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: var(--base-opacity, 0.75); }
   25% { transform: translateY(-35px) rotate(6deg) scale(1.08); opacity: calc(var(--base-opacity, 0.75) * 1.15); }
@@ -399,10 +314,9 @@ body {
   50% { transform: scale(1.25); opacity: 0.65; } 
 }
 
-
-/* ============================================
-   13. #LAYOUT-CONTAINER
-   ============================================ */
+/* ==========================================
+   LAYOUT CONTAINER
+   ========================================== */
 .container { 
   position: relative; 
   z-index: 1; 
@@ -422,10 +336,9 @@ body {
   .layout { grid-template-columns: 1fr; } 
 }
 
-
-/* ============================================
-   14. #HEADER-LOGO
-   ============================================ */
+/* ==========================================
+   HEADER LOGO
+   ========================================== */
 .header { 
   display: flex; 
   align-items: center; 
@@ -475,6 +388,11 @@ body {
   line-height: 1; 
 }
 
+.logo-accent {
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
+}
+
 .logo-tagline { 
   font-size: 12px; 
   color: var(--text-muted); 
@@ -484,10 +402,9 @@ body {
   margin-top: 3px; 
 }
 
-
-/* ============================================
-   15. #STATUS-PILL
-   ============================================ */
+/* ==========================================
+   STATUS PILL
+   ========================================== */
 .status-pill { 
   display: flex; 
   align-items: center; 
@@ -515,10 +432,9 @@ body {
   50% { box-shadow: 0 0 0 6px rgba(0, 255, 163, 0); } 
 }
 
-
-/* ============================================
-   16. #SECTION-PRICING
-   ============================================ */
+/* ==========================================
+   SECTION PRICING
+   ========================================== */
 .section-header { 
   margin-bottom: 20px; 
   animation: fadeDown 0.7s ease both; 
@@ -540,10 +456,9 @@ body {
   margin-top: 4px; 
 }
 
-
-/* ============================================
-   17. #PRICING-GRID
-   ============================================ */
+/* ==========================================
+   PRICING GRID
+   ========================================== */
 .pricing-grid { 
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
@@ -558,10 +473,9 @@ body {
   .pricing-grid { grid-template-columns: 1fr; } 
 }
 
-
-/* ============================================
-   18. #PRICE-CARD
-   ============================================ */
+/* ==========================================
+   PRICE CARD
+   ========================================== */
 .price-card { 
   position: relative; 
   background: var(--card-bg); 
@@ -603,10 +517,9 @@ body {
   background: rgba(0, 217, 255, 0.08); 
 }
 
-
-/* ============================================
-   19. #PRICE-CARD-POPULAR
-   ============================================ */
+/* ==========================================
+   PRICE CARD POPULAR
+   ========================================== */
 .price-card.popular { 
   border-color: var(--accent); 
   box-shadow: 0 0 30px rgba(255, 0, 229, 0.25); 
@@ -626,10 +539,9 @@ body {
   box-shadow: 0 4px 15px rgba(255, 0, 229, 0.4); 
 }
 
-
-/* ============================================
-   20. #CARD-CONTENT
-   ============================================ */
+/* ==========================================
+   CARD CONTENT
+   ========================================== */
 .card-glow { 
   position: absolute; 
   inset: 0; 
@@ -748,10 +660,9 @@ body {
   box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4); 
 }
 
-
-/* ============================================
-   21. #VOUCHER-SECTION
-   ============================================ */
+/* ==========================================
+   VOUCHER SECTION
+   ========================================== */
 .voucher-section { 
   position: sticky; 
   top: 24px; 
@@ -768,10 +679,9 @@ body {
   box-shadow: var(--shadow-md); 
 }
 
-
-/* ============================================
-   22. #VOUCHER-HEADER
-   ============================================ */
+/* ==========================================
+   VOUCHER HEADER
+   ========================================== */
 .voucher-header { 
   text-align: center; 
   margin-bottom: 24px; 
@@ -833,10 +743,9 @@ body {
   margin-top: 5px; 
 }
 
-
-/* ============================================
-   23. #PLAN-SUMMARY
-   ============================================ */
+/* ==========================================
+   PLAN SUMMARY
+   ========================================== */
 .plan-summary { 
   display: flex; 
   align-items: center; 
@@ -887,19 +796,17 @@ body {
   background-clip: text; 
 }
 
-
-/* ============================================
-   24. #PAYMENT-SECTION
-   ============================================ */
+/* ==========================================
+   PAYMENT SECTION
+   ========================================== */
 .payment-section { 
   text-align: center; 
   animation: fadeIn 0.4s ease; 
 }
 
-
-/* ============================================
-   25. #PAYMENT-GRID
-   ============================================ */
+/* ==========================================
+   PAYMENT GRID
+   ========================================== */
 .payment-grid { 
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
@@ -949,22 +856,9 @@ body {
   filter: grayscale(1); 
 }
 
-
-/* ============================================
-   26. #INPUT-VOUCHER
-   ============================================ */
-/* (Tidak digunakan di versi baru - langsung payment) */
-
-
-/* ============================================
-   27. #CODE-DISPLAY
-   ============================================ */
-/* (Tidak digunakan di versi baru) */
-
-
-/* ============================================
-   28. #BUTTONS
-   ============================================ */
+/* ==========================================
+   BUTTONS
+   ========================================== */
 .connect-btn { 
   width: 100%; 
   display: flex; 
@@ -1057,10 +951,9 @@ body {
   box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4); 
 }
 
-
-/* ============================================
-   29. #SUCCESS-SCREEN
-   ============================================ */
+/* ==========================================
+   SUCCESS SCREEN
+   ========================================== */
 .success-screen { 
   display: none; 
   text-align: center; 
@@ -1167,10 +1060,9 @@ body {
 .detail-row span { color: var(--text-secondary); }
 .detail-row strong { color: #fff; }
 
-
-/* ============================================
-   30. #FOOTER
-   ============================================ */
+/* ==========================================
+   VOUCHER FOOTER
+   ========================================== */
 .voucher-footer { 
   display: flex; 
   justify-content: center; 
@@ -1191,6 +1083,9 @@ body {
 
 .voucher-footer a:hover { opacity: 0.75; }
 
+/* ==========================================
+   FOOTER
+   ========================================== */
 .footer { 
   text-align: center; 
   padding: 24px 0 0; 
@@ -1200,10 +1095,180 @@ body {
 
 .footer strong { color: var(--primary); }
 
+/* ==========================================
+   BAGIAN LAYANAN 
+   ========================================== */
+.bagian-layanan {
+  padding: 100px 20px;
+  position: relative;
+}
 
-/* ============================================
-   31. #RESPONSIVE
-   ============================================ */
+.grid-layanan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kartu-layanan {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(0, 255, 245, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.kartu-layanan:hover {
+  transform: translateY(-10px);
+  border-color: #00fff5;
+  box-shadow: 0 20px 40px rgba(0, 255, 245, 0.2);
+}
+
+.ikon-layanan {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.kartu-layanan h3 {
+  color: #00fff5;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.kartu-layanan p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   BAGIAN KONTAK 
+   ========================================== */
+.bagian-kontak {
+  padding: 100px 20px;
+  position: relative;
+}
+
+.grid-kontak {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .grid-kontak {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-kontak {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.item-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 245, 0.1);
+  transition: all 0.3s ease;
+}
+
+.item-info:hover {
+  border-color: #00fff5;
+  transform: translateX(10px);
+}
+
+.ikon-info {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 245, 0.1);
+  border-radius: 50%;
+}
+
+.konten-info h4 {
+  color: #00fff5;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.konten-info p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.formulir-kontak {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 0, 255, 0.1);
+}
+
+.kelompok-form {
+  margin-bottom: 20px;
+}
+
+.kelompok-form input,
+.kelompok-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(10, 14, 39, 0.6);
+  border: 2px solid rgba(0, 255, 245, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: var(--font);
+}
+
+.kelompok-form input:focus,
+.kelompok-form textarea:focus {
+  outline: none;
+  border-color: #00fff5;
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.2);
+}
+
+.kelompok-form input::placeholder,
+.kelompok-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.tombol-kirim {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #00fff5 0%, #ff00ff 100%);
+  border: none;
+  border-radius: 10px;
+  color: #0a0e27;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font);
+}
+
+.tombol-kirim:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 255, 245, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
 @keyframes fadeDown { 
   from { opacity: 0; transform: translateY(-16px); } 
   to { opacity: 1; transform: translateY(0); } 
@@ -1224,9 +1289,5 @@ body {
   .voucher-card { padding: 24px 20px 20px; }
   .layout { gap: 24px; }
   .logo-name { font-size: 18px; }
+  .grid-layanan { grid-template-columns: 1fr; }
 }
-
-
-/* ============================================
-   AKHIR DARI STYLESHEET
-   ============================================ */
